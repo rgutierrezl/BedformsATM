@@ -1,4 +1,6 @@
-We are pleased to let the users know that we have recently obtained the digital object identifier for the synthetic bed form data from Pangaea. Please refer to:
+Please notice that for file size restrictions, some of the synthetic bed form data can be downloaded from this repository. The full version of such data can be downloaded from PANGAEA repository through the link below:
+https://doi.pangaea.de/10.1594/PANGAEA.873304 
 
-Gutierrez, Ronald R (2017): Synthetic data for the Bedforms Analysis Toolkit for Multiscale Modeling (Bedforms-ATM). doi:10.1594/PANGAEA.873304
+Please use to the following citation to reference it:
+Gutierrez, Ronald R (2017): Synthetic data for the Bedforms Analysis Toolkit for Multiscale Modeling (Bedforms-ATM). doi:10.1594/PANGAEA.873304.
 
