@@ -171,7 +171,7 @@ handles.WindowData.Base_L(2) = BFPScale/4;
 
 % Get the name of the project
 aux = find(loaded_path==filesep);
-pos = strfind ( loaded_path, [filsep 'Projects' filesep] );
+pos = strfind ( loaded_path, [filesep 'Projects' filesep] );
 pos = find(aux == pos) + 1;
 handles.NameProject = loaded_path((aux(pos)+1):(aux(pos+1)-1));
 
