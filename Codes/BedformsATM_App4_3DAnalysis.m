@@ -24,6 +24,9 @@ function varargout = BedformsATM_App4_3DAnalysis(varargin)
 
 % Last Modified by GUIDE v2.5 19-Nov-2016 13:16:22
 
+% Modified on December 5th 2020 for Bedforms-ATM v1.2: Changes in data upload handling to assure compatibility with
+% later MATLAB versions
+
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
@@ -88,14 +91,18 @@ function SelectDiscrimination_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 set(hObject, 'BackGroundColor', [1 0.5 0]);
-handles.NameProject.Discrimination = 1;
+% In Bedforms-ATM v1.1 this sentence was: handles.NameProject.Discrimination = 1;
+% In Bedforms-ATM v1.2 this sentence was replaced by: handles.NameProject = 1;
+handles.NameProject = 1;
 
 % Get projects path for uipickfiles
 DocumentsPath = pwd;
 
 % Get .MAT for_Analysis from Discrimination
 handles.projectfolder = fullfile(DocumentsPath, 'Projects');
-loaded_path = uipickfiles('FilterSpec',handles.projectfolder, ...
+% In Bedforms-ATM v1.1 this sentence was: loaded_path = uipickfiles('FilterSpec', handles.projectfolder, ...
+% In Bedforms-ATM v1.2 this sentence was replaced by: loaded_path = uipickfiles('REFilter','\.mat$', ...
+loaded_path = uipickfiles('REFilter','\.mat$', ...
                            'NumFiles', 1, 'Output', 'char');
       
 if ( loaded_path==0 )

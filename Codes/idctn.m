@@ -1,5 +1,8 @@
 function [y,w] = idctn(y,DIM,w)
-
+% WARNING: the following function was updated to ensure its compatibility
+% with various versions of MATLAB. Updates are detailed in the User Guide
+% and in the corresponding lines.
+%
 %IDCTN N-D inverse discrete cosine transform.
 %   X = IDCTN(Y) inverts the N-D DCT transform, returning the original
 %   array if Y was obtained using Y = DCTN(X).
@@ -50,7 +53,9 @@ function [y,w] = idctn(y,DIM,w)
 %   reused in the next calls.
 % ----------
 
-error(nargchk(1,3,nargin))
+% In Bedforms-ATM v1.1 this sentence was: error(nargchk(1, 3, nargin));
+% In Bedforms-ATM v1.2 this sentence was replaced by: narginchk(1, 3);
+narginchk(1, 3)
 
 y = double(y);
 sizy = size(y);

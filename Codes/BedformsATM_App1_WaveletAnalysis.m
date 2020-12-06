@@ -24,6 +24,8 @@ function varargout = BedformsATM_App1_WaveletAnalysis(varargin)
 
 % Last Modified by GUIDE v2.5 19-Nov-2016 13:05:37
 
+% Modified on December 5th 2020 for Bedforms-ATM v1.2: General information and version number updated.
+
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...

@@ -24,6 +24,9 @@ function varargout = BedformsATM_App2_HovmollerAnalysis(varargin)
 
 % Last Modified by GUIDE v2.5 19-Nov-2016 13:09:42
 
+% Modified on December 5th 2020 for Bedforms-ATM v1.2: Sub-function calcnbins updated and fixed compatibility with special
+% characters
+
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
@@ -112,7 +115,12 @@ wb = waitbar(0,'1','Name','Progress...', 'WindowStyle', 'modal');
 v = figure('Visible','off');
 for fil = 1:handles.nfiles
 
-    waitbar(fil/handles.nfiles,wb,sprintf(['Loading signal ' num2str(fil) '...']));
+    % In Bedforms-ATM v1.1 this sentence was: waitbar(fil/handles.nfiles,wb,sprintf(['Loading signal ' num2str(fil) '...']));
+    % In Bedforms-ATM v1.2 this sentence was updated by: adding the 'try-catch' controls arround the 'waitbar' command
+    try
+        waitbar(fil/handles.nfiles,wb,sprintf(['Loading signal ' num2str(fil) '...']));
+    catch
+    end
     
     % Load data to get significant peaks
     load(handles.Files{fil},'fourierPeriod','wltSignif',...

@@ -1,4 +1,8 @@
 function nbins = calcnbins(x, method, minimum, maximum)
+% WARNING: the following function was updated to ensure its compatibility
+% with various versions of MATLAB. Updates are detailed in the User Guide
+% and in the corresponding lines.
+%
 % Calculate the "ideal" number of bins to use in a histogram, using a
 % choice of methods.
 % 
@@ -85,7 +89,9 @@ function nbins = calcnbins(x, method, minimum, maximum)
 % $ Author: Richard Cotton $		$ Date: 2008/10/24 $    $ Version 1.5 $
 
 % Input checking
-error(nargchk(1, 4, nargin));
+% In Bedforms-ATM v1.1 this sentence was: error(nargchk(1, 4, nargin));
+% In Bedforms-ATM v1.2 this sentence was replaced by: narginchk(1, 4);
+narginchk(1, 4);
 
 if ~isnumeric(x) && ~islogical(x)
     error('calcnbins:invalidX', 'The X argument must be numeric or logical.')

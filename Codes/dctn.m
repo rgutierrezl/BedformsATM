@@ -1,5 +1,8 @@
 function [y,w] = dctn(y,DIM,w)
-
+% WARNING: the following function was updated to ensure its compatibility
+% with various versions of MATLAB. Updates are detailed in the User Guide
+% and in the corresponding lines.
+%
 %DCTN N-D discrete cosine transform.
 %   Y = DCTN(X) returns the discrete cosine transform of X. The array Y is
 %   the same size as X and contains the discrete cosine transform
@@ -51,7 +54,9 @@ function [y,w] = dctn(y,DIM,w)
 %   reused in the next calls.
 % ----------
 
-error(nargchk(1,3,nargin))
+% In Bedforms-ATM v1.1 this sentence was: error(nargchk(1, 3, nargin));
+% In Bedforms-ATM v1.2 this sentence was replaced by: narginchk(1, 3);
+narginchk(1, 3)
 
 y = double(y);
 sizy = size(y);

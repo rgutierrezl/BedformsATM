@@ -1,5 +1,8 @@
 function [z,s,exitflag] = SMOOTHN(varargin)
-
+% WARNING: the following function was updated to ensure its compatibility
+% with various versions of MATLAB. Updates are detailed in the User Guide
+% and in the corresponding lines.
+%
 %SMOOTHN Robust spline smoothing for 1-D to N-D data.
 %   SMOOTHN provides a fast, automatized and robust discretized smoothing
 %   spline for data of any dimension.
@@ -147,7 +150,9 @@ function [z,s,exitflag] = SMOOTHN(varargin)
 %   href="matlab:web('http://www.biomecardio.com/matlab/smoothn.html')">website</a> for more details about SMOOTHN 
 
 % Check input arguments
-error(nargchk(1,10,nargin));
+% In Bedforms-ATM v1.1 this sentence was: error(nargchk(1, 10, nargin));
+% In Bedforms-ATM v1.2 this sentence was replaced by: narginchk(1, 10);
+narginchk(1, 10);
 
 %% Test & prepare the variables
 %---
